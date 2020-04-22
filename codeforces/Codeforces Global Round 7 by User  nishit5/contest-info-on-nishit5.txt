@@ -1,0 +1,7 @@
+Username: nishit5
+Contest no: 72
+Contest name: Codeforces Global Round 7
+Rank: 3384
+Solved: 4
+Rating Change: +3
+New Rating: 1603

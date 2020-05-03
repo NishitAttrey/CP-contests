@@ -1,0 +1,7 @@
+Username: nishit5
+Contest no: 54
+Contest name: Codeforces Round #604 (Div. 2)
+Rank: 1864
+Solved: 3
+Rating Change: -16
+New Rating: 1550

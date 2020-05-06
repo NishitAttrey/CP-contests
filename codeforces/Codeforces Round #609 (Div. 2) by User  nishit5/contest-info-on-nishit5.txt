@@ -1,0 +1,7 @@
+Username: nishit5
+Contest no: 59
+Contest name: Codeforces Round #609 (Div. 2)
+Rank: 1925
+Solved: 2
+Rating Change: -17
+New Rating: 1530

@@ -1,0 +1,35 @@
+<snippet>
+	<content><![CDATA[
+vector<int>adj[N];
+bool visit[N];
+int dist[N];
+int pa[N];
+queue<int>q;
+void bfs(int x){
+  	visit[x]=true;
+	pa[x] = -1;  	
+	dist[x]=0;
+  	q.push(x);
+  	while(!q.empty()){
+	    int s=q.front();
+	    q.pop(); 
+	    for(auto u : adj[s]){
+	      if(visit[u])
+	        continue;
+	      visit[u]=true;
+	      dist[u]=dist[s]+1;
+	      pa[u] = s;
+	      q.push(u);
+	    }
+
+	}
+}
+
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bfs</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet wiint trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

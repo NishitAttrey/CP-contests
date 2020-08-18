@@ -1,0 +1,42 @@
+<snippet>
+	<content><![CDATA[
+int modpow(int x, int y){
+    int ans=1;
+    if(y==1){
+        return x%MOD;
+    }
+    x=x % MOD;
+    y=y % (MOD-1);
+    while(y>0){
+        if(y & 1){
+            ans = (ans*x) %MOD;
+        }
+        x *= x;
+        x = x % MOD;
+        y >>= 1;
+    }
+    return ans;
+}
+
+int modinv(int x){
+    return modpow(x,MOD-2);
+}
+int sub(int x, int y) {
+    x -= y;
+    if (x < 0) return x + MOD;
+    return x;
+}
+int add(int x, int y) {
+    x += y;
+    if (x >= MOD) return x - MOD;
+    return x;
+}
+int multiply(int a,int b){
+    return (a*b)%MOD;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>modpower</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet wiint trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

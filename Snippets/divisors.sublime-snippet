@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+    set<int>sets;
+    for (int i=1; i<=sqrt(n); i++){   
+        if (n%i==0) { 
+  			sets.insert(n/i);
+		 	sets.insert(i);
+           
+        } 
+    } 
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>divisors</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

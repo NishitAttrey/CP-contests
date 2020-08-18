@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+#define unique_sort(x) sort(all(x)), x.resize(distance(x.begin(), unique(all(x))))
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>unique_sort</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

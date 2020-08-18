@@ -1,0 +1,38 @@
+<snippet>
+	<content><![CDATA[
+bool visit[500001];
+vector<pa>adj[500001];
+vector<int>dist(500001);
+vector<int>p(500001);
+priority_queue<pa>q;
+
+
+
+void dijkstra(int x){
+    dist[x]=0;
+    q.push({0,x});
+    while(!q.empty()){
+        int a=q.top().S;
+        q.pop();
+        if(visit[a])
+            continue;  
+        visit[a]=true;
+        for(auto u:adj[a]){
+            int b=u.F;
+            int w=u.S;
+            if(dist[a]+w<dist[b]){
+                dist[b]=dist[a]+w;
+                 p[b] = a;
+                q.push({-dist[b],b});
+            }
+        }                
+        
+    }  
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dijkstra</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

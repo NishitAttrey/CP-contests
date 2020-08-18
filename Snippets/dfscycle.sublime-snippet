@@ -1,0 +1,59 @@
+<snippet>
+	<content><![CDATA[
+int vis[N];
+bool findLoop(int v){
+	if(vis[v]==1)
+		return 1;
+	if(vis[v]==2)
+		return 0;
+	vis[v]=1;
+	for(auto &it:adj[v]){
+		if(findLoop(it))
+			return 1;
+	}
+	vis[v]=2;
+	return 0;
+}
+// vector<int>parent(N,-1);
+// vector<int>visit(N,0);
+// vector<int>cycle;
+// int bfs(int x){
+//     queue<int>q;
+//     visit[x] = 1;
+//     q.push(x);
+//     parent[x] = x;
+//     while(!q.empty()){
+//         int a = q.front();
+//         q.pop();
+//         for(auto s : adj[a]){
+//             if(!visit[s]){
+//                 visit[s] = 1;
+//                 q.push(s);
+//                 parent[s] = a;
+//             }
+//             else{
+//                 return s;
+//             }
+//         }
+//     }
+// }
+// void cycles(){
+//     int start = bfs(1);
+//     cycle.push_back(start);
+//     int c = adj[start][0];
+//     while(c != start){
+//         cycle.push_back(c);
+//         c = adj[c][0];
+//     }
+//     for(auto s : cycle ){
+//         cout << s << " ";
+//     }
+// }
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	 <tabTrigger>dfscycle</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

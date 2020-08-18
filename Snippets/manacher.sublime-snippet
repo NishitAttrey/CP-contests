@@ -1,0 +1,71 @@
+<snippet>
+	<content><![CDATA[
+struct Manacher {
+  // IGNORES FIRST LETTER - in[0] must be space
+  // par[i] = k <=> [i - k + 1, i + k] is maximal palindrome
+  // npar[i] = k <=> [i - k, i + k] is maximal palindrome
+  vector<int> par, npar;
+  Manacher(string in) {
+    assert(in[0] == ' ');
+    int orig_n = in.size() - 1;
+    string s = " #";
+    for (int i = 1; i <= orig_n; i++) {
+        s += in[i];
+        s += '#';
+    }
+    s += '$';
+    int new_n = s.size() - 2;
+    npar.resize(new_n + 2);
+    int furth_beg = 0;
+    int furth_end = 0;
+    for (int i = 1; i <= new_n; i++) {
+        if (furth_end < i) {
+            furth_beg = i;
+            furth_end = i;
+        }
+        int corr_npar = furth_beg + furth_end - i;
+        if (furth_end > i + npar[corr_npar]) {
+            npar[i] = npar[corr_npar];
+        } 
+        else {
+            npar[i] = furth_end - i;
+            furth_beg = i - npar[i];
+            while (s[furth_beg - 1] == s[furth_end + 1]) {
+                furth_beg--;
+                furth_end++;
+                npar[i]++;
+            }
+        }
+    }
+    par.resize(orig_n + 2);
+    for (int i = 1; i <= orig_n; i++) {
+        if (i < orig_n) {
+            par[i] = npar[2 * i + 1] / 2;
+        } 
+        npar[i] = npar[2 * i] / 2;
+    }
+    npar.resize(orig_n + 2);
+  }
+};
+ 
+int PalPref(string s) {
+  int n = s.size();
+  s = " " + s; 
+  Manacher man(s);
+  int res = 0;
+    f(i,1,n+1) {
+        if(man.par[i] == i) {
+            res = max(res, 2 * i);
+        }
+        if (man.npar[i] == i - 1) {
+          res = max(res, 2 * i - 1);
+        }
+  }
+  return res;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>manacher</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

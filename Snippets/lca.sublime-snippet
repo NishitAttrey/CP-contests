@@ -1,6 +1,5 @@
 <snippet>
 	<content><![CDATA[
-// credit : Prateek
 struct LCA{
    vector<vector<int>> G,parent;
    vector<int> tin,tout,depth;

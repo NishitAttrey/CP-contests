@@ -1,5 +1,6 @@
 <snippet>
 	<content><![CDATA[
+#define all(x) x.begin(), x.end()
 #define unique_sort(x) sort(all(x)), x.resize(distance(x.begin(), unique(all(x))))
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
